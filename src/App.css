@@ -1,0 +1,50 @@
+.cardText {
+  margin-top: 490px;
+  padding-left: 0px;
+  box-sizing: border-box;
+  transition: all 0.6s;
+}
+.cardd:hover .cardText {
+  padding-left: 36px;
+  margin-top: 230px;
+  transition-timing-function: ease-in-out !important;
+}
+.card_bug{
+margin-top: -70px !important;
+}
+.shadowCarousel{
+  box-shadow: 0px 0px 10px rgb(208, 208, 208); 
+  margin: 10px;
+  margin-top: 112px;
+}
+.shadowBtnn{
+  box-shadow: 0px 0px 10px rgb(208, 208, 208); 
+}
+.myCarusel_btn{
+  width: 60px !important;
+  height: 60px !important;
+  font-size: 16px !important;
+}
+.myCaruselBtn{
+  color: #000;;
+}
+.header{
+  background-size: cover;
+  background-position: 50%;
+}
+@media screen and (max-width:500px){
+  
+  .headerBTn{
+    margin-top: -40px !important;
+  }
+  
+}
+
+
+@media screen and (max-width:425px){
+  
+  .headerBTn{
+    margin-top: -40px !important;
+  }
+  
+}
