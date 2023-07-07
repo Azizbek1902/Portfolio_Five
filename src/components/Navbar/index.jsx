@@ -1,143 +1,205 @@
-import React, { useState } from "react";
-import img from "../../assets/images/logo.png";
-import { AiOutlineSearch } from "react-icons/ai";
+import { FaCartArrowDown } from "react-icons/fa";
+import { FaSearch } from "react-icons/fa";
+import { FaUserAlt } from "react-icons/fa";
+import { AiFillLinkedin } from "react-icons/ai";
+import { AiOutlineTwitter } from "react-icons/ai";
+import { AiOutlineInstagram } from "react-icons/ai";
+import { CgFacebook } from "react-icons/cg";
+import { AiTwotonePhone } from "react-icons/ai";
+import { HiOutlineMail } from "react-icons/hi";
+import { useState, useEffect } from "react";
+import {
+  Navbar,
+  MobileNav,
+  Typography,
+  IconButton,
+} from "@material-tailwind/react";
 import { NavLink } from "react-router-dom";
 
-const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+export default function Example() {
+  const [openNav, setOpenNav] = useState(false);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  useEffect(() => {
+    window.addEventListener(
+      "resize",
+      () => window.innerWidth >= 960 && setOpenNav(false)
+    );
+  }, []);
+
+  const navList = (
+    <ul className="mb-4 mt-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-24">
+      <Typography
+        as="li"
+        variant=""
+        color="blue-gray"
+        className="p-1 font-[100] hover:text-[#69bb7e] text-[#212934] text-lg"
+      >
+        <NavLink
+          to="/"
+          className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "active" : ""
+          }
+        >
+          Home
+        </NavLink>
+      </Typography>
+      <Typography
+        as="li"
+        variant="small"
+        color="blue-gray"
+        className="p-1 font-[100] hover:text-[#69bb7e] text-[#212934] text-lg"
+      >
+        <NavLink
+          to="/about"
+          className="flex items-center active:text-[#69bb7e]"
+        >
+          About
+        </NavLink>
+      </Typography>
+      <Typography
+        as="li"
+        variant="small"
+        color="blue-gray"
+        className="p-1 font-[100] hover:text-[#69bb7e] text-[#212934] text-lg"
+      >
+        <NavLink to="/shop" className="flex items-center active:text-[#69bb7e]">
+          Shop
+        </NavLink>
+      </Typography>
+      <Typography
+        as="li"
+        variant="small"
+        color="blue-gray"
+        className="p-1 font-[100] hover:text-[#69bb7e] text-[#212934] text-lg"
+      >
+        <NavLink to="/contact" className="flex items-center">
+          Contact
+        </NavLink>
+      </Typography>
+    </ul>
+  );
 
   return (
-    <nav
-      style={{
-        width: "100%",
-        background: "rgba(39, 43, 44, 0.87)",
-        height: " 106px",
-        position: "absolute",
-        zIndex: "999",
-        boxShadow: "3px 0 13px rgba(30, 30, 30, 0.90)",
-      }}
-    >
-      <div className="md:max-w-[800px] xl:max-w-[1350px] lg:max-w-[950px] mx-auto px-2 sm:px-6 lg:px-0">
-        <div className="relative flex items-center justify-between h-28">
-          <div className="flex-1 flex items-center justify-start sm:items-stretch sm:justify-start">
-            <div className="flex-shrink-0 flex items-center">
-              <img src={img} alt="" />
-            </div>
-            <div className="hidden sm:block sm:ml-6 lg:ml-32 xl:ml-72">
-              <div className="flex items-center space-x-0 lg:space-x-3 xl:space-x-8 ">
-                <NavLink
-                  to="/"
-                  className="text-white  hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-lg font-medium"
-                >
-                  Home
-                </NavLink>
-                <NavLink
-                  to="/about"
-                  className="text-white hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-lg font-medium"
-                >
-                  About
-                </NavLink>
-                <NavLink
-                  to="/what"
-                  className="text-white hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-lg font-medium"
-                >
-                  What we do
-                </NavLink>
-                <NavLink
-                  to="/portfoloi"
-                  className="text-white hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-lg font-medium"
-                >
-                  Portfoilo
-                </NavLink>
-                <NavLink
-                  to="/contact"
-                  className="text-white hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-lg font-medium"
-                >
-                  Contact Us
-                </NavLink>
-                <NavLink
-                  to="/login"
-                  className="text-white relative left-5 xl:relative xl:left-28 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-lg font-medium"
-                >
-                  Login
-                </NavLink>
-                <NavLink className="text-white hover:bg-gray-700 xl:relative xl:left-28 hover:text-white px-3 py-2 rounded-md text-lg font-medium">
-                  <AiOutlineSearch size={22} className="relative left-3" />
-                </NavLink>
+    <>
+      <div className="lg:flex  lg:justify-center lg:bg-[#212934] hidden">
+        <div className="xl:w-[1296px] w-[90%]">
+          <div className="flex justify-between py-2 items-center">
+            <div className="flex gap-3 text-white">
+              <div className="flex gap-2 cursor-pointer items-center">
+                <HiOutlineMail />
+                <span className="font-thin">info@company.com</span>
+              </div>
+              <div className="flex gap-2 cursor-pointer items-center">
+                <AiTwotonePhone />
+                <span className="font-thin">010-020-0340</span>
               </div>
             </div>
+            <div className="flex gap-2  text-white">
+              <CgFacebook />
+              <AiOutlineInstagram />
+              <AiOutlineTwitter />
+              <AiFillLinkedin />
+            </div>
           </div>
-          <div className="sm:hidden">
-            <button
-              type="button"
-              onClick={toggleMenu}
-              className="text-gray-300 hover:bg-[#0000009E] hover:text-white block px-2 py-2 rounded-md text-base font-medium"
-              aria-controls="mobile-menu"
-              aria-expanded={isMenuOpen ? "true" : "false"}
-            >
-              <span className="sr-only">Open main menu</span>
+        </div>
+      </div>
+      <Navbar className="mx-auto max-w-screen-2xl shadow-none px-0 rounded-none">
+        <div className="container mx-auto flex items-center lg:px-0 px-3 justify-between text-blue-gray-900">
+          <h1 className="text-[#59ab6e] font-semibold text-6xl">Zay</h1>
+          <div className="hidden lg:block">{navList}</div>
+          <div className="lg:flex hidden gap-7 items-center">
+            <div className="cursor-pointer">
+              <FaSearch size={20} />
+            </div>
+            <div className="cursor-pointer">
+              <span className="ml-2 bg-[#e9eef5] rounded-full px-2 text-black font-medium">
+                7
+              </span>
+              <FaCartArrowDown className="relative bottom-3" size={20} />
+            </div>
+            <div className="cursor-pointer">
+              <span className="ml-2 bg-[#e9eef5] rounded-full px-2 text-black font-medium">
+                +99
+              </span>
+              <FaUserAlt className="relative bottom-3" size={20} />
+            </div>
+          </div>
+          <IconButton
+            variant="text"
+            className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
+            ripple={false}
+            onClick={() => setOpenNav(!openNav)}
+          >
+            {openNav ? (
               <svg
-                className="h-6 w-6"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
+                className="h-6 w-6"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
-                aria-hidden="true"
+                strokeWidth={2}
               >
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                ></path>
+                  d="M6 18L18 6M6 6l12 12"
+                />
               </svg>
-            </button>
-          </div>
+            ) : (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            )}
+          </IconButton>
         </div>
-      </div>
-
-      {isMenuOpen && (
-        <div className="sm:hidden" id="mobile-menu">
-          <div className="px-2 pt-2 pb-3 space-y-1">
-            <NavLink
-              to="/"
-              className="text-white hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-            >
-              Home
-            </NavLink>
-            <NavLink
-              to="/about"
-              className="text-white hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-            >
-              About
-            </NavLink>
-            <NavLink
-              to="/what"
-              className="text-white hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-            >
-              What we do
-            </NavLink>
-            <NavLink
-              to="/portfoloi"
-              className="text-white hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-            >
-              Portfoilo
-            </NavLink>
-            <NavLink
-              to="/contact"
-              className="text-white hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-            >
-              Contact Us
-            </NavLink>
+        <MobileNav open={openNav}>
+          <div className="container mx-auto">
+            {navList}
+            <div className="flex gap-7 items-center">
+              <div className="cursor-pointer flex w-full">
+                <input
+                  type="text"
+                  placeholder="Search..."
+                  className="border-[#e8e8e8] border-[1px] px-4 py-2 rounded-s-md text-[#212529] placeholder:font-thin placeholder:font-sans  text-xl w-full"
+                />
+                <div className="border-[#ced4da] border-[1px] bg-[#e9ecef] rounded-e-md flex items-center px-3">
+                  <FaSearch size={20} color="black" className="outline-none" />
+                </div>
+              </div>
+              <div className="cursor-pointer">
+                <span className="ml-2 bg-[#e9eef5] rounded-full px-2 text-black font-medium">
+                  7
+                </span>
+                <FaCartArrowDown
+                  className="relative bottom-3"
+                  size={20}
+                  color="black"
+                />
+              </div>
+              <div className="cursor-pointer">
+                <span className="ml-2 bg-[#e9eef5] rounded-full px-2 text-black font-medium">
+                  +99
+                </span>
+                <FaUserAlt
+                  className="relative bottom-3"
+                  size={20}
+                  color="black"
+                />
+              </div>
+            </div>
           </div>
-        </div>
-      )}
-    </nav>
+        </MobileNav>
+      </Navbar>
+    </>
   );
-};
-
-export default Navbar;
+}

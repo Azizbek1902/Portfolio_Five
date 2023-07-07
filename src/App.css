@@ -1,50 +1,79 @@
-.cardText {
-  margin-top: 490px;
-  padding-left: 0px;
-  box-sizing: border-box;
-  transition: all 0.6s;
-}
-.cardd:hover .cardText {
-  padding-left: 36px;
-  margin-top: 230px;
-  transition-timing-function: ease-in-out !important;
-}
-.card_bug{
-margin-top: -70px !important;
-}
-.shadowCarousel{
-  box-shadow: 0px 0px 10px rgb(208, 208, 208); 
-  margin: 10px;
-  margin-top: 112px;
-}
-.shadowBtnn{
-  box-shadow: 0px 0px 10px rgb(208, 208, 208); 
-}
-.myCarusel_btn{
-  width: 60px !important;
-  height: 60px !important;
-  font-size: 16px !important;
-}
-.myCaruselBtn{
-  color: #000;;
-}
-.header{
-  background-size: cover;
-  background-position: 50%;
-}
-@media screen and (max-width:500px){
-  
-  .headerBTn{
-    margin-top: -40px !important;
-  }
-  
+.active {
+  color: #69bb7e;
 }
 
+.swiper-button-prev {
+  color: #59ab6e !important;
+  padding: 0 30px !important;
+  width: 0px !important;
+}
+.swiper-button-next {
+  color: #59ab6e !important;
+  padding: 0 30px !important;
+  width: 0px !important;
+}
+.swiper-pagination-bullet {
+  width: 40px !important;
+  background-color: #59ab6e !important;
+  height: 4px !important;
+  border-radius: 0px !important;
+}
+.shadowww {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
 
-@media screen and (max-width:425px){
-  
-  .headerBTn{
-    margin-top: -40px !important;
-  }
-  
+.shadowww:hover .iconn {
+  color: white;
+}
+.caros {
+  display: flex !important;
+  justify-content: space-between !important;
+}
+
+.imgg {
+  filter: grayscale(100%);
+  opacity: 0.5;
+  width: 20% !important;
+}
+select {
+  /* for Firefox */
+  -moz-appearance: none;
+  /* for Chrome */
+  -webkit-appearance: none;
+}
+
+select::-ms-expand {
+  display: none;
+}
+.cartShop {
+  transition: 2s all;
+}
+.cartShop:hover .bgIMGShop {
+  opacity: 0.8;
+  background-color: #0007;
+}
+.cartShop:hover .aposity {
+  display: block;
+  opacity: 5;
+}
+.carousel .control-next.control-arrow:before {
+  border-left: 8px solid #000000 !important;
+}
+.carousel .control-prev.control-arrow:before {
+  border-right: 8px solid #000 !important;
+}
+.carousel .thumb{
+  width: 130px !important;
+  border: none !important;
+  margin-right: 20px !important;
+}
+.carousel .thumbs-wrapper{
+  margin: 20px 50px !important;
+}
+.thumbs animated{
+  transform: translate3d(-453px, 0px, 0px) !important;
+}
+.slide{
+  border: 1px solid rgba(0,0,0,.125) !important;
+  border-radius: 5px;
 }

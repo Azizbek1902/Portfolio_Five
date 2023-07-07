@@ -1,28 +1,63 @@
-import React from 'react'
-import { Carousel } from "@material-tailwind/react";
+import React from "react";
+import { FaUserAlt } from "react-icons/fa"; 
+import { FaPercent } from "react-icons/fa"; 
+import { FaExchangeAlt } from "react-icons/fa"; 
+import { FaTruck } from "react-icons/fa"; 
+import Header from "../../components/views/about/Header";
+import Brand from "../../components/views/about/Brand";
 
 function About() {
+  const data = [
+    {
+      id:1,
+      icon: <FaTruck size={72}/>,
+      title:"Delivery Services"
+    },
+    {
+      id:2,
+      icon: <FaExchangeAlt size={60}/>,
+      title:"Shipping & Return"
+    },
+    {
+      id:3,
+      icon: <FaPercent size={60}/>,
+      title:"Promotion"
+    },
+    {
+      id:4,
+      icon: <FaUserAlt size={60}/>,
+      title:"24 Hours Service"
+    }
+  ]
   return (
-    <div><div className="border-2 border-sky-500 pt-96">
-    <Carousel className="rounded-xl">
-      <img
-        src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80"
-        alt="image 1"
-        className="h-full w-full object-cover"
-      />
-      <img
-        src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
-        alt="image 2"
-        className="h-full w-full object-cover"
-      />
-      <img
-        src="https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80"
-        alt="image 3"
-        className="h-full w-full object-cover"
-      />
-    </Carousel>
-  </div></div>
-  )
+    <>
+      <Header />
+      <div className="flex justify-center py-20">
+        <div className="w-[95%] md:w-[90%] xl:w-[1320px]">
+          <div className="flex justify-center">
+            <div className="text-center mb-10 xl:w-[600px] w-[95%] md:w-[80%]">
+              <h1 className="text-5xl pb-4 font-extralight">Our Services</h1>
+              <p className="text-lg font-light">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                eiusmod Lorem ipsum dolor sit amet.
+              </p>
+            </div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 md:gap-7">
+            {data.map((item) => (
+              <div className="shadowww hover:text-white hover:bg-[#59ab6e] bg-white py-10 md:mb-0 mb-7" key={item.id}>
+                <div className="flex justify-center text-[#59ab6e] iconn">{item.icon}</div>
+                <h1 className="text-center pt-5 text-xl font-semibold">
+                  {item.title}
+                </h1>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+      <Brand />
+    </>
+  );
 }
 
-export default About
+export default About;

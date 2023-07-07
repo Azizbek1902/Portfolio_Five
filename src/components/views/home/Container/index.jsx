@@ -1,124 +1,105 @@
+import { BsFillStarFill } from "react-icons/bs";
 import React from "react";
-import img from "../../../../assets/images/prot1.png";
-import img1 from "../../../../assets/images/prot2.png";
-import img2 from "../../../../assets/images/prot3.png";
-import img3 from "../../../../assets/images/prot4.png";
-import { AiOutlineSearch } from "react-icons/ai";
-import { GrLink } from "react-icons/gr";
+import img1 from "../../../../assets/images/feature_prod_01.jpg";
+import img2 from "../../../../assets/images/feature_prod_02.jpg";
+import img3 from "../../../../assets/images/feature_prod_03.jpg";
 
 function Container() {
+  const data = [
+    {
+      id: 1,
+      img: img1,
+      star: 3,
+      price: "$240.00",
+      title: "Gym Weight",
+      desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt in culpa qui officia deserunt.",
+      total: "Reviews (24)",
+    },
+    {
+      id: 2,
+      img: img2,
+      star: 3,
+      price: "$480.00",
+      title: "Cloud Nike Shoes",
+      desc: "Aenean gravida dignissim finibus. Nullam ipsum diam, posuere vitae pharetra sed, commodo ullamcorper.",
+      total: "Reviews (48)",
+    },
+    {
+      id: 3,
+      img: img3,
+      star: 5,
+      price: "$360.00",
+      title: "Summer Addides Shoes",
+      desc: "Curabitur ac mi sit amet diam luctus porta. Phasellus pulvinar sagittis diam, et scelerisque ipsum lobortis nec.",
+      total: "Reviews (74)",
+    },
+  ];
   return (
     <>
-      <div className="flex justify-center">
-        <div className="w-[95%] xl:w-[1170px]">
-          <div className="flex justify-start mt-16 mb-12">
-            <div>
-              <h1 className="text-5xl font-bold text-[#323232]">We Have Done Portfolio</h1>
-              <div className="mt-4 w-20 h-2 bg-[#2e2f34]"></div>
+      <div className="flex justify-center mt-20 bg-[#e9eef5] py-10">
+        <div className="w-[95%] md:w-[90%] xl:w-[1320px]">
+          <div className="flex justify-center">
+            <div className="text-center xl:w-[600px] md:w-[90%] w-[95%}">
+              <h1 className="robotoFont text-[48px] font-extralight tracking-tighter">
+                Featured Product
+              </h1>
+              <p>
+                Reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+              </p>
             </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 md:gap-6 mb-6">
-            <div
-              className="cardd  mb-6 bg-cover shadow-xl bg-no-repeat h-[60vh] overflow-hidden w-full bg-[image:var(--image-url)]"
-              style={{ "--image-url": `url(${img})` }}
-            >
-              <div className="text-start cardText bg-white p-9">
-                <div className="flex card_bug ">
-                  <div className="bg-white shadow-2xl flex items-center p-5 rounded-full">
-                    <AiOutlineSearch color="black" size={18} />
+          <div className="grid mt-20 grid-cols-1 md:grid-cols-3 md:gap-5 gap-0">
+            {data.map((elem) => (
+              <div
+                className="rounded-sm  bg-white border-[1px] border-[rgba(0,0,0,.125)] mb-5 md:mb-0"
+                key={elem.id}
+              >
+                <img src={elem.img} className="w-full rounded-t-sm" alt="" />
+                <div className="p-3">
+                  <div className="flex justify-between">
+                    <div className="flex gap-2">
+                      <BsFillStarFill 
+                        size={20}
+                        className={`${
+                          elem.star > 1 ? "text-[#ede861]" : "text-[#bcbcbc]"
+                        }`}
+                      />
+                      <BsFillStarFill 
+                        size={20}
+                        className={`${
+                          elem.star > 2 ? "text-[#ede861]" : "text-[#bcbcbc]"
+                        }`}
+                      />
+                      <BsFillStarFill 
+                        size={20}
+                        className={`${
+                          elem.star > 3 ? "text-[#ede861]" : "text-[#bcbcbc]"
+                        }`}
+                      />
+                      <BsFillStarFill 
+                        size={20}
+                        className={`${
+                          elem.star > 4 ? "text-[#ede861]" : "text-[#bcbcbc]"
+                        }`}
+                      />
+                      <BsFillStarFill 
+                        size={20}
+                        className={`${
+                          elem.star > 5 ? "text-[#ede861]" : "text-[#bcbcbc]"
+                        }`}
+                      />
+                    </div>
+                    <span className="text-[#bcbcbc] robotoFont text-lg font-serif font-medium">{elem.price}</span>
                   </div>
-                  <div className="bg-white shadow-2xl flex items-center p-5 rounded-full">
-                    <GrLink color="black" size={18} />
-                  </div>
+                  <h1 className="text-[30px] robotoFont font-semibold mt-2">{elem.title}</h1>
+                  <p className="text-lg font-light">{elem.desc}</p>
+                  <h3 className="text-[#bcbcbc] text-lg py-2">{elem.total}</h3>
                 </div>
-                <h1 className="text-2xl font-bold pb-3 pt-2">
-                  Carrency Dashbord
-                </h1>
-                <p className="text-lg ">
-                  There are many variations of passages of Lorem Ipsum
-                  available, but the majoraity have suffered alteration in some
-                  form, by injected humour, or randomised words which don't look
-                  even slightly believable
-                </p>
               </div>
-            </div>
-            <div
-              className="cardd  mb-6 bg-cover shadow-xl  bg-no-repeat h-[60vh] overflow-hidden w-full bg-[image:var(--image-url)]"
-              style={{ "--image-url": `url(${img1})` }}
-            >
-              <div className="text-start cardText bg-white p-9">
-                <div className="flex card_bug ">
-                  <div className="bg-white shadow-2xl flex items-center p-5 rounded-full">
-                    <AiOutlineSearch color="black" size={18} />
-                  </div>
-                  <div className="bg-white shadow-2xl flex items-center p-5 rounded-full">
-                    <GrLink color="black" size={18} />
-                  </div>
-                </div>
-                <h1 className="text-2xl font-bold pb-3 pt-2">
-                  Carrency Dashbord
-                </h1>
-                <p className="text-lg ">
-                  There are many variations of passages of Lorem Ipsum
-                  available, but the majoraity have suffered alteration in some
-                  form, by injected humour, or randomised words which don't look
-                  even slightly believable
-                </p>
-              </div>
-            </div>
-            <div
-              className="cardd  mb-6 bg-cover shadow-xl  bg-no-repeat h-[60vh] overflow-hidden w-full bg-[image:var(--image-url)]"
-              style={{ "--image-url": `url(${img2})` }}
-            >
-              <div className="text-start cardText bg-white p-9">
-                <div className="flex card_bug ">
-                  <div className="bg-white shadow-2xl flex items-center p-5 rounded-full">
-                    <AiOutlineSearch color="black" size={18} />
-                  </div>
-                  <div className="bg-white shadow-2xl flex items-center p-5 rounded-full">
-                    <GrLink color="black" size={18} />
-                  </div>
-                </div>
-                <h1 className="text-2xl font-bold pb-3 pt-2">
-                  Carrency Dashbord
-                </h1>
-                <p className="text-lg ">
-                  There are many variations of passages of Lorem Ipsum
-                  available, but the majoraity have suffered alteration in some
-                  form, by injected humour, or randomised words which don't look
-                  even slightly believable
-                </p>
-              </div>
-            </div>
-            <div
-              className="cardd  mb-6 bg-cover shadow-xl  bg-no-repeat h-[60vh] overflow-hidden w-full bg-[image:var(--image-url)]"
-              style={{ "--image-url": `url(${img3})` }}
-            >
-              <div className="text-start cardText bg-white p-9">
-                <div className="flex card_bug ">
-                  <div className="bg-white shadow-2xl flex items-center p-5 rounded-full">
-                    <AiOutlineSearch color="black" size={18} />
-                  </div>
-                  <div className="bg-white shadow-2xl flex items-center p-5 rounded-full">
-                    <GrLink color="black" size={18} />
-                  </div>
-                </div>
-                <h1 className="text-2xl font-bold pb-3 pt-2">
-                  Carrency Dashbord
-                </h1>
-                <p className="text-lg ">
-                  There are many variations of passages of Lorem Ipsum
-                  available, but the majoraity have suffered alteration in some
-                  form, by injected humour, or randomised words which don't look
-                  even slightly believable
-                </p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
-      </div>
-      <div className="flex justify-center my-6 mb-10">
-      <button className="hover:bg-[#464646c7] bg-[#000000c7] text-lg font-semibold text-center py-3 px-16 text-white">See More</button>
       </div>
     </>
   );

@@ -1,12 +1,12 @@
 import React from "react";
 import Home from "../pages/Home";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+import About from "../pages/About";
+import Shop from "../pages/Shop";
+import Corzinka from "../pages/Corzinka";
+import Contact from "../pages/Contact";
 import { Route, Routes } from "react-router-dom";
-import About from "../components/views/home/About";
-import Profile from "../components/views/home/Container";
-import What from "../components/views/home/CardCorousel";
-import Contact from "../components/views/home/Contact";
+import Navbar from '../components/Navbar'
+import Footer from '../components/Footer'
 
 function Router() {
   return (
@@ -15,9 +15,9 @@ function Router() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/what" element={<What />} />
-        <Route path="/portfoloi" element={<Profile />} />
+        <Route path="/shop" element={<Shop />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/corzinka" element={<Corzinka />} />
       </Routes>
       <Footer />
     </>
